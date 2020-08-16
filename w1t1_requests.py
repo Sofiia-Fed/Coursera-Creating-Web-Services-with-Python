@@ -16,7 +16,6 @@ def calc_age(uid):
 	})
 	user_id = json.loads(vk_request1.text)['response'][0]['id']
 
-
 	vk_request2 = requests.get(f'{API_URL}friends.get', params={
 		'access_token': ACCESS_TOKEN,
 		'user_id': user_id,
@@ -34,6 +33,3 @@ def calc_age(uid):
 	return friends_ages
 
 
-if __name__ == '__main__':
-	res = calc_age('reigning')
-	print(res)
